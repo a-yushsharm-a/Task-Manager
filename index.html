@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todify - Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="style3.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+
+    <div class="top-navbar">
+        <div class="app-name">Todify</div>
+        <div class="circular-tabs">
+            <div class="circle-tab tab-1">1</div>
+            <div class="circle-tab tab-2">2</div>
+            <div class="circle-tab tab-3">3</div>
+            <div class="circle-tab tab-4">4</div>
+            <div class="circle-tab tab-5">5</div>
+            <div class="circle-tab tab-6">6</div> <!-- New circular tab -->
+            <div class="circle-tab tab-7">7</div> <!-- New circular tab -->
+            <div class="circle-tab tab-8">8</div> <!-- New circular tab -->
+        </div>
+        
+        <div class="user-info">
+            <img src="images/lnb5.png" alt="User Icon">
+            <p id="userName">Ayush Sharma</p>
+        </div>
+
+        <!-- <div class="user-info">
+            <img id="userProfilePicture" src="images/default-profile.png" alt="User Icon">
+            <p id="userName"></p>
+            <p id="userEmail"></p>
+        </div> -->
+         
+    </div>
+
+    <div class="container">
+        <div class="left-navbar">
+            <div class="top-icon">
+                <img src="images/lnb0.png" alt="App Icon">
+            </div>
+            <div class="nav-links">
+                <a href="#item1" id="nav1">
+                    <img src="images/lnb1.png" alt="Dashboard Icon">
+                    <span>Dashboard</span>
+                </a>
+                <a href="#item2" id="nav2">
+                    <img src="images/lnb2.png" alt="Tasks Icon">
+                    <span>Add Task</span>
+                </a>
+                <a href="#item3" id="nav3">
+                    <img src="images/lnb4.png" alt="Projects Icon">
+                    <span>My Tasks</span>
+                </a>
+                <a href="#item4" id="nav4">
+                    <img src="images/lnb3.png" alt="Calendar Icon">
+                    <span>Edit Tasks</span>
+                </a>
+            </div>
+           
+        </div>
+   
+    
+    <div class="main-content-area">
+        <div id="item1">
+            <div class ="l-content" >
+                <div class="left-content">
+                <div class="task-b">
+                    <h2>Total Tasks Completed</h2>
+                    <div id="total-tasks-completed"></div>          
+                </div>
+                <div class="task-b">
+                    <h2>Total Tasks Pending</h2>
+                    <div id="total-tasks-pending">Total Tasks Pending: 0</div>
+                </div>
+                <div class="task-b">
+                    <h2>Total Tasks Due Today</h2>
+                    <div id="total-tasks-today">Total Tasks Due Today: 0</div>
+                </div>
+                <div class="task-b">
+                    <h2>Total Tasks Due This Hour</h2>
+                    <div id="total-tasks-hour">Total Tasks Due This Hour: 0</div>
+                </div>
+              </div>
+                <div class="quote-section">
+                    <div class="quote-container">
+                        <span class="arrow" id="left-arrow">&#9664;</span>
+                        <div class="quote" id="quote-display">"Time is what we want most, but what we use worst." - William Penn</div>
+                        <span class="arrow" id="right-arrow">&#9654;</span>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="side-content">
+                <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+                <div class="calendar">
+                    <div class="header">
+                        <div class="month-section">
+                            <div class="btn prev-month-btn">
+                                <i class="fas fa-chevron-left"><</i>
+                            </div>
+                            <div class="month"></div>
+                            <div class="btn next-month-btn">
+                                <i class="fas fa-chevron-right">></i>
+                            </div>
+                        </div>
+                        <div class="year-section">
+                            <div class="btn prev-year-btn">
+                                <i class="fas fa-chevron-left"><</i>
+                            </div>
+                            <div class="year"></div>
+                            <div class="btn next-year-btn">
+                                <i class="fas fa-chevron-right">></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weekdays">
+                        <div class="day">Sun</div>
+                        <div class="day">Mon</div>
+                        <div class="day">Tue</div>
+                        <div class="day">Wed</div>
+                        <div class="day">Thu</div>
+                        <div class="day">Fri</div>
+                        <div class="day">Sat</div>
+                    </div>
+                    <div class="days">
+                        <!-- Add days using JS -->
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+
+       
+        
+
+     <!-- Add Task Section -->
+     <div id="item2" class="content-section" style="display: none;">
+        <h2>Add Task</h2>
+        <form class="task-form" id="task-form" autocomplete="off">
+            <input type="text" placeholder="Task Name" id="task-name" required>
+            <textarea placeholder="Task Description" id="task-desc" required></textarea>
+            <div class="time">
+            
+            <input type="date" id="due-date" required>
+            <input type="time" id="due-time" required>
+            </div>
+            <select id="task-category" required>
+                <option value="">Select Category</option>
+                <option value="work">Work</option>
+                <option value="fun">Fun</option>
+                <option value="personal">Personal</option>
+            </select>
+            <select id="task-priority" required>    
+                <option value="">Select Priority</option>
+                <option value="high">High</option>
+                <option value="low">Low</option>
+            </select>
+            <select id="task-status" required>
+                <option value="">Select Status</option>
+                <option value="To start">To Start</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Completed">Completed</option>
+            </select>
+            <button type="submit">Add Task</button>
+        </form>
+        <div id="success-message" style="display: none; color: green; margin-top: 10px;">Task submitted successfully!</div>
+    </div>
+
+    <!-- View Tasks Section -->
+    <div id="item3" class="main-content-area" style="display:none;">
+        <h2>View Tasks</h2>
+        <div class="search-container">
+            <input type="text" id="task-search" class="search-input" placeholder="Search tasks..." oninput="searchTasks()">
+            <button type="button" id="voiceSearchBtn" class="voice-search-btn"><i class='bx bx-microphone'></i></button>
+        </div>
+
+        <div class="filterbox">
+        <div class="filter">
+            <label for="priority-filter">Priority:</label>
+            <select id="priority-filter" onchange="applyFilters()">
+                <option value="">All</option>
+                <option value="high">High</option>
+                <option value="low">Low</option>
+            </select>
+        </div>
+        <div class="filter">
+            <label for="status-filter">Status:</label>
+            <select id="status-filter" onchange="applyFilters()">
+                <option value="">All</option>
+                <option value="completed">Completed</option>
+                <option value="in progress">In Progress</option>
+                <option value="to start">To Start</option>
+            </select>
+        </div>
+        <div class="filter">
+            <label for="category-filter">Category:</label>
+            <select id="category-filter" onchange="applyFilters()">
+                <option value="">All</option>
+                <option value="work">Work</option>
+                <option value="fun">Fun</option>
+                <option value="personal">Personal</option>
+            </select>
+        </div>
+       </div>
+        <div id="tasks-container">
+            <table class="task-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th class="sortable" data-column="dateAdded">Date Added</th>
+                        <th class="sortable" data-column="dueDate">Due Date</th>
+                        <th>Due Time</th>
+                        <th>Priority</th>
+                        <th>Status</th>
+                        <th>Category</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="tasks-body">
+                    <!-- Tasks will be dynamically added here -->
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+
+    <div id="item4" class="main-content-area" style="display:none;">
+        <h2>Edit Task</h2>
+        <form class="task-form" id="edit-task-form">
+            <input type="hidden" id="edit-task-id">
+            <input type="text" placeholder="Task Name" id="edit-task-name" required>
+            <textarea placeholder="Description" id="edit-task-desc" required></textarea>
+            <input type="date" id="edit-task-date" required>
+            <input type="time" id="edit-task-time" required>
+            <select id="edit-task-category" required>
+                <option value="work">Work</option>
+                <option value="fun">Fun</option>
+                <option value="personal">Personal</option>
+            </select>
+            <select id="edit-task-priority" required>
+                <option value="">Select Priority</option>
+                <option value="high">High</option>
+                <option value="low">Low</option>
+            </select>
+            <select id="edit-task-status" required>
+                <option value="">Select Status</option>
+                <option value="To start">To Start</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Completed">Completed</option>
+            </select>
+            <button type="submit" id="save-task">Save Task</button>
+        </form>
+    </div>
+    </div>
+
+
+</div>
+    <script src="script.js"></script>
+    <script src="script1.js"></script>
+    <script src="script2.js"></script>
+    <script type="module" src="script2.js"></script>
+
+</body>
+</html>

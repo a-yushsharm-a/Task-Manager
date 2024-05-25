@@ -1,0 +1,50 @@
+
+.task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+h2 {
+    text-align: center;
+}
+
+.task-form{
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
+.task-form input, .task-form textarea, .task-form select, .task-form button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#due-date{
+    width:15rem;
+}
+
+.time{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 30rem;;
+}
+
+.task-form button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.task-form button:hover {
+    background-color: #45a049;
+}
+.task-form button{
+    width:15rem;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    justify-content: center;
+    margin-left:25rem;
+}

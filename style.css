@@ -1,0 +1,423 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.container {
+    /* /* zzdisplay: flex; */
+    
+    padding-bottom: 30px;
+}
+
+.left-navbar {
+    width: 100px;
+    background-color: #033792;
+    color: white;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-right: 10px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px 0;
+    height: 90vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.left-navbar a {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.top-icon img {
+    width: 60px;
+    height: 60px;
+    margin-left: 20px;
+}
+
+.left-navbar a img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 5px;
+}
+
+.left-navbar a:hover {
+    background-color: #b8c2d5;
+}
+
+.user-info {
+    color: white;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+}
+
+.user-info img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 5px;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+.top-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    margin-left: 150px;
+    margin-right: 20px;
+    margin-top: 20px;
+    background-color: #033792;
+    color: white;
+}
+
+.top-navbar .app-name {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: cursive;
+}
+
+.top-navbar .circular-tabs {
+    display: flex;
+    gap: 10px;
+}
+
+.top-navbar .circle-tab {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+
+/* style.css */
+
+/* Circular Tabs */
+.circular-tabs {
+    display: flex;
+    justify-content: center;
+
+    background-color: rgb(229, 228, 226);
+    padding: 5px;
+}
+
+/* Circular Tab */
+.circle-tab {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+/* Circular Tab Colors */
+.tab-3 { background-color: #3498db; } /* Blue */
+.tab-2 { background-color: #e67e22; } /* Orange */
+.tab-1 { background-color: #2ecc71; } /* Green */
+.tab-4 { background-color: #9b59b6; } /* Purple */
+.tab-5 { background-color: #e74c3c; } /* Red */
+.tab-6 { background-color: #1abc9c; } /* Teal */
+.tab-7 { background-color: #5d6d7e; } /* Indigo */
+.tab-8 { background-color: #e74c3c; } /* Magenta */
+
+
+
+.main-content-area {
+    margin-left: 150px;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #e9ebfb;
+    height:max-content;
+    /* display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between; */
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .top-navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .circular-tabs {
+        justify-content: center;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .left-navbar {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        overflow-x: auto;
+        padding: 10px 0;
+        position: relative;
+    }
+
+    .left-navbar a {
+        flex-grow: 1;
+        flex-basis: 25%;
+        text-align: center;
+    }
+
+    .main-content-area {
+        margin-left: 0;
+        padding-top: 10px;
+        flex-direction: column;
+    }
+
+    .left-content {
+        grid-template-columns: 1fr;
+    }
+
+    .side-content {
+        max-width: 100%;
+    }
+}
+
+
+/* Hover effect for circular tabs */
+.circle-tab:hover {
+    cursor: pointer;
+    background-color: #d1e7dd; /* Light green-blue for hover */
+}
+
+/* Theme 1: Green Blue */
+.theme-1 .top-navbar {
+    background-color: #2ecc71; /* Green */
+}
+
+.theme-1 .left-navbar {
+    background-color: #27ae60; /* Darker Green */
+}
+
+.theme-1 .main-content-area {
+    background-color: #e8f8f5; /* Light Green Blue */
+}
+
+.theme-1 .calendar .header {
+    background-color: #27ae60; /* Darker Green */
+    color: white;
+}
+
+.theme-1 .calendar .weekdays {
+    background-color: #2ecc71; /* Green */
+    color: white;
+}
+
+.theme-1 .calendar .days .day {
+    background-color: #e8f8f5; /* Light Green Blue */
+    color: black;
+}
+
+.theme-1 .calendar .days .day:hover {
+    background-color: #d1e7dd; /* Light green-blue for hover */
+}
+
+
+/* style.css */
+
+/* Theme 2: Orange - Yellow */
+.theme-2 .top-navbar {
+    background-color: #ff7f0e; /* Orange */
+}
+
+.theme-2 .left-navbar {
+    background-color: #d35400; /* Darker Orange */
+}
+
+.theme-2 .main-content-area {
+    background-color: #fdf3e7; /* Light Orange-Yellow */
+}
+
+/* Theme 3: Navy Blue - Blue */
+.theme-3 .top-navbar {
+    background-color: #34495e; /* Navy Blue */
+}
+
+.theme-3 .left-navbar {
+    background-color: #2c3e50; /* Darker Navy Blue */
+}
+
+.theme-3 .main-content-area {
+    background-color: #d5e8f9; /* Light Blue */
+}
+
+/* Theme 4: Purple - Pink */
+.theme-4 .top-navbar {
+    background-color: #9b59b6; /* Purple */
+}
+
+.theme-4 .left-navbar {
+    background-color: #8e44ad; /* Darker Purple */
+}
+
+.theme-4 .main-content-area {
+    background-color: #f6e3ff; /* Light Purple-Pink */
+}
+
+/* Theme 5: Red Brown */
+.theme-5 .top-navbar {
+    background-color: #8b4513; /* Red Brown */
+}
+
+.theme-5 .left-navbar {
+    background-color: #6e2c00; /* Darker Red Brown */
+}
+
+.theme-5 .main-content-area {
+    background-color: #f5deb3; /* Light Red Brown */
+}
+
+/* Theme 6: Teal - Cyan */
+.theme-6 .top-navbar {
+    background-color: #1abc9c; /* Teal */
+}
+
+.theme-6 .left-navbar {
+    background-color: #16a085; /* Darker Teal */
+}
+
+.theme-6 .main-content-area {
+    background-color: #eafaf1; /* Light Teal-Cyan */
+}
+
+/* Theme 7: Indigo - Blue */
+.theme-7 .top-navbar {
+    background-color: #5d6d7e; /* Indigo */
+}
+
+.theme-7 .left-navbar {
+    background-color: #34495e; /* Darker Indigo */
+}
+
+.theme-7 .main-content-area {
+    background-color: #d1dbe7; /* Light Blue */
+}
+
+/* Theme 8: Magenta - Pink */
+.theme-8 .top-navbar {
+    background-color: #e74c3c; /* Magenta */
+}
+
+.theme-8 .left-navbar {
+    background-color: #c0392b; /* Darker Magenta */
+}
+
+.theme-8 .main-content-area {
+    background-color: #f9ebee; /* Light Pink */
+}
+
+
+/* style.css */
+
+/* Dark/Light Mode Toggle Button */
+.dark-light-toggle {
+    margin-left: auto;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.dark-light-toggle .toggle-label {
+    margin-left: 10px;
+}
+
+/* Slider (Toggle Button) */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+
+/* style.css */
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode .slider {
+    background-color: #999;
+}
+
+.dark-mode input:checked + .slider {
+    background-color: #3e3e3e;
+}
+
+.dark-mode input:checked + .slider:before {
+    background-color: #fff;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todify - Task Management App</title>
+    <link rel="stylesheet" href="home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-logo">Todify</div>
+            <div class="nav-links" id="nav-links">
+                <a href="#home">Home</a>
+                <a href="#features">Features</a>
+                <a href="#contact">Contact Us</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="section home">
+        <div class="container">
+            <div class="row">
+                <div class="text">
+                    <h1>Welcome to Todify</h1>
+                    <h2>Your Ultimate Task Management Solution</h2>
+                    <p>Are you tired of feeling overwhelmed by your never-ending to-do list? Look no further! Taskify is here to revolutionize the way you manage your tasks and boost your productivity.</p>
+                    <button class="btn"><a href="login.html"  target="_blank">Get Started</a></button>
+                </div>
+                <div class="image">
+                    <img src="images/home1.png" alt="Task Management" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="section features">
+        <div class="container">
+            <h2>Features</h2>
+            <div class="features-grid">
+                <div class="feature-box">
+                    <h3>Task Categorization</h3>
+                    <p>Organize your tasks into different categories such as Work, Personal, and Shopping. This feature helps you keep your tasks well-structured and easy to manage, allowing you to quickly find and prioritize tasks based on their category.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>Due Date Tracking</h3>
+                    <p>Set due dates for your tasks to ensure timely completion. This feature helps you stay on top of your deadlines and manage your time effectively, ensuring that important tasks are completed on time.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>Countdown Timer</h3>
+                    <p>Visualize the time remaining for each task with a countdown timer. This feature provides a clear and immediate view of your time constraints, helping you to prioritize tasks and manage your workload more effectively.
+                        </p>
+                </div>
+                <div class="feature-box">
+                    <h3>Theme Customization</h3>
+                    <p>his feature enhances the user experience by allowing you to customize the appearance of the application, making it more comfortable to use in various lighting environments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-details">
+                <p>Email: <a href="mailto:contact@taskify.com">contact@taskify.com</a></p>
+                <p>Phone: <a href="tel:+1234567890">+91 234 567 890</a></p>
+                <p>Address: Sector 35-B, Chandigarh</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('nav-toggle').onclick = function() {
+            var navLinks = document.getElementById('nav-links');
+            if (navLinks.style.display === "flex") {
+                navLinks.style.display = "none";
+            } else {
+                navLinks.style.display = "flex";
+            }
+        };
+    </script>
+</body>
+</html>
